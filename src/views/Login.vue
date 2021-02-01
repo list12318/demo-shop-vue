@@ -50,7 +50,9 @@ export default {
         // 跳转
         this.$router.push({ name: 'Home' });
       } else {
-        this.$message.warning('用户名或密码不能为空');
+        this.$message.warning('用户名或密码为空');
+
+        this.$router.push({ name: 'Home' });
       }
     },
   },
