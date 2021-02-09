@@ -1,6 +1,6 @@
 <template>
   <div id="user-list">
-    <el-table :data="tableData" style="width: 100%">
+    <el-table :data="tableData" max-height="840px">
       <el-table-column label="编号" prop="id"> </el-table-column>
 
       <el-table-column label="姓名" prop="name"> </el-table-column>
@@ -23,6 +23,15 @@
         </template>
       </el-table-column>
     </el-table>
+
+    <el-pagination
+      class="pagination"
+      background
+      layout="prev, pager, next"
+      :total="50"
+      :page-size="12"
+    >
+    </el-pagination>
   </div>
 </template>
 
@@ -47,7 +56,6 @@ export default {
         name: '王巨虎',
         address: '上海市普陀区金沙江路 1516 弄'
       }],
-      search: 'ss'
     }
   },
   methods: {
@@ -74,5 +82,10 @@ export default {
 #user-list {
   width: 100%;
   height: 878px;
+
+  .pagination {
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
 }
 </style>
