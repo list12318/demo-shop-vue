@@ -16,7 +16,7 @@ const routes = [{
     keepAlive: true
   }
 }, {
-  path: '/',
+  path: '/home',
   name: 'Home',
   component: Home,
   meta: {
@@ -44,7 +44,6 @@ const routes = [{
       path: 'order-list',
       component: OrderList
     }
-
   ]
 }];
 
