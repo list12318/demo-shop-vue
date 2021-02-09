@@ -46,13 +46,20 @@ export default {
 
     handleLogin() {
       if (this.checkEmpty()) {
-        this.$message.success('登录成功');
+        this.$message({
+          type: 'success',
+          showClose: true,
+          message: '登录成功'
+        });
+
         // 跳转
         this.$router.push({ name: 'Home' });
       } else {
-        this.$message.warning('用户名或密码为空');
-
-        this.$router.push({ name: 'Home' });
+        this.$message({
+          type: 'warning',
+          showClose: true,
+          message: '用户名或密码为空'
+        });
       }
     },
   },

@@ -2,8 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '@/views/Login.vue';
 import Home from '@/views/Home.vue';
-import UserList from '@/components/home/user/user-list.vue';
-import GoodsList from '@/components/home/goods/goods-list.vue';
+import UserList from '@/components/home/user-list.vue';
+import GoodsList from '@/components/home/goods-list.vue';
+import OrderList from '@/components/home/order-list.vue';
 
 Vue.use(VueRouter);
 
@@ -36,7 +37,14 @@ const routes = [{
       name: 'goods-list',
       path: 'goods-list',
       component: GoodsList
+    },
+    // 订单列表
+    {
+      name: 'order-list',
+      path: 'order-list',
+      component: OrderList
     }
+
   ]
 }];
 

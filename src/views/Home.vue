@@ -4,10 +4,10 @@
     <el-header class="header">
       <el-row>
         <el-col :span="4"> LOGO </el-col>
-        <el-col class="title-div" :span="19">
+        <el-col class="title-div" :span="16">
           <h2>电商后台管理系统</h2>
         </el-col>
-        <el-col class="logout-div" :span="1">
+        <el-col class="logout-div" :span="4">
           <a class="logout" @click="handleLogout">退出</a>
         </el-col>
       </el-row>
@@ -21,7 +21,7 @@
           :router="true"
           class="el-menu-vertical-demo"
         >
-          <!-- 1 -->
+          <!-- 用户管理 -->
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-menu"></i>
@@ -35,7 +35,7 @@
             </el-menu-item-group>
           </el-submenu>
 
-          <!-- 2 -->
+          <!-- 商品管理 -->
           <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-menu"></i>
@@ -44,11 +44,10 @@
             <el-menu-item-group>
               <template slot="title">管理你的商品</template>
               <el-menu-item index="goods-list">商品列表</el-menu-item>
-              <el-menu-item index="user-list">分类参数</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
-          <!-- 3 -->
+          <!-- 订单管理 -->
           <el-submenu index="3">
             <template slot="title">
               <i class="el-icon-menu"></i>
@@ -56,7 +55,7 @@
             </template>
             <el-menu-item-group>
               <template slot="title">管理你的订单</template>
-              <el-menu-item index="3-1">订单列表</el-menu-item>
+              <el-menu-item index="order-list">订单列表</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -93,7 +92,7 @@ export default {
       text-align: center;
     }
     .logout-div {
-      text-align: center;
+      text-align: right;
       a {
         cursor: pointer;
       }
