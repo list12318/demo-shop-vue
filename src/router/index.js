@@ -8,44 +8,47 @@ import OrderList from '@/components/home/order-list.vue';
 
 Vue.use(VueRouter);
 
-const routes = [{
-  path: '/login',
-  name: 'Login',
-  component: Login,
-  meta: {
-    keepAlive: true
-  }
-}, {
-  path: '/home',
-  name: 'Home',
-  component: Home,
-  meta: {
-    keepAlive: true
+const routes = [
+  // 重定向 -> 登录页面
+  {
+    path: '/',
+    redirect: '/login',
   },
-  children: [
-    // 用户列表
-    {
-      name: 'user-list',
-      path: 'user-list',
-      component: UserList,
-      meta: {
-        keepAlive: true
+  // 登录页面
+  {
+    path: '/login',
+    component: Login,
+
+  },
+  // 首页
+  {
+    path: '/home',
+    component: Home,
+    children: [
+      // 用户列表
+      {
+        name: 'user-list',
+        path: 'user-list',
+        component: UserList,
+        meta: {
+          keepAlive: true
+        }
+      },
+      // 商品列表
+      {
+        name: 'goods-list',
+        path: 'goods-list',
+        component: GoodsList
+      },
+      // 订单列表
+      {
+        name: 'order-list',
+        path: 'order-list',
+        component: OrderList
       }
-    },
-    // 商品列表
-    {
-      name: 'goods-list',
-      path: 'goods-list',
-      component: GoodsList
-    },
-    // 订单列表
-    {
-      name: 'order-list',
-      path: 'order-list',
-      component: OrderList
-    }
-  ]
-}];
+    ]
+  }
+];
 
 const router = new VueRouter({
   routes,

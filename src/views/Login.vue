@@ -20,17 +20,15 @@
           type="password"
         ></el-input>
       </el-form-item>
-      <el-button class="btn-login" @click="handleLogin" type="primary"
-        >登录</el-button
-      >
+      <el-button class="btn-login" @click="handleLogin" type="primary">
+        登录
+      </el-button>
     </el-form>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Login',
-  components: {},
   data() {
     return {
       fromData: {
@@ -39,21 +37,16 @@ export default {
       }
     };
   },
+
   methods: {
     checkEmpty() {
       return this.fromData.username !== '' && this.fromData.password !== '';
     },
 
+    // 点击登录按钮
     handleLogin() {
       if (this.checkEmpty()) {
-        this.$message({
-          type: 'success',
-          showClose: true,
-          message: '登录成功'
-        });
-
-        // 跳转
-        this.$router.push({ name: 'Home' });
+        this.$router.push('/home');
       } else {
         this.$message({
           type: 'warning',
@@ -61,8 +54,9 @@ export default {
           message: '用户名或密码为空'
         });
       }
-    },
-  },
+    }
+  }
+
 };
 </script>
 

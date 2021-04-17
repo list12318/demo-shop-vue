@@ -71,9 +71,15 @@
 
 <script>
 export default {
+
+
+  beforeMount() {
+    this.$message.success('登录成功');
+  },
+
   methods: {
     handleLogout() {
-      this.$router.push({ name: 'Login' });
+      this.$router.push('/login');
       this.$message.info('已退出');
     }
   },
