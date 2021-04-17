@@ -17,9 +17,9 @@
       <!-- Menu -->
       <el-aside class="aside" width="230px">
         <el-menu
-          default-active="2"
-          :router="true"
+          default-active="user-list"
           class="el-menu-vertical-demo"
+          @select="select"
         >
           <!-- 用户管理 -->
           <el-submenu index="1">
@@ -74,17 +74,28 @@ export default {
 
 
   beforeMount() {
-    this.$message.success('登录成功');
+    this.$message.success('欢迎回来');
   },
 
   methods: {
+
+    // 切换菜单
+    select(index) {
+      let path = '/home/' + index;
+      if (this.$route.path === path)
+        return
+      this.$router.push(path);
+    },
+
+    // 点击退出
     handleLogout() {
       this.$router.push('/login');
       this.$message.info('已退出');
     }
   },
-  components: {
-  }
+
+
+
 }
 </script>
 

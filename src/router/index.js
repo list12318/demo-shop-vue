@@ -18,21 +18,21 @@ const routes = [
   {
     path: '/login',
     component: Login,
-
   },
   // 首页
   {
     path: '/home',
     component: Home,
     children: [
-      // 用户列表
+      // 默认 + 用户列表
+      {
+        path: '',
+        redirect: 'user-list',
+      },
       {
         name: 'user-list',
         path: 'user-list',
         component: UserList,
-        meta: {
-          keepAlive: true
-        }
       },
       // 商品列表
       {
