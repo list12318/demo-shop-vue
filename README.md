@@ -1,19 +1,7 @@
 # shop-vue
 
-## Project setup
-```
-npm install
-```
+使用 Vue+Element 做的一个简单的管理系统
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+在线访问：https://tanyiqu-shop-vue.vercel.app/
